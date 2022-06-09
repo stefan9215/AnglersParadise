@@ -12,4 +12,9 @@ public class DamController {
 
         return "all-dams";
     }
+
+    @GetMapping("/dams/add")
+    public String addDam() {
+        return "add-dam";
+    }
 }
