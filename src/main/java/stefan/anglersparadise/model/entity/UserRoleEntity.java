@@ -1,6 +1,6 @@
-package stefan.anglerparadise.model.entity;
+package stefan.anglersparadise.model.entity;
 
-import stefan.anglerparadise.model.entity.enums.RoleNameEnum;
+import stefan.anglersparadise.model.entity.enums.RoleNameEnum;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package stefan.anglerparadise;
+package stefan.anglersparadise;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

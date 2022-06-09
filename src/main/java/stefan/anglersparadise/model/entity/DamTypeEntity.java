@@ -1,6 +1,6 @@
-package stefan.anglerparadise.model.entity;
+package stefan.anglersparadise.model.entity;
 
-import stefan.anglerparadise.model.entity.enums.DamTypeEnum;
+import stefan.anglersparadise.model.entity.enums.DamTypeEnum;
 
 import javax.persistence.*;
 

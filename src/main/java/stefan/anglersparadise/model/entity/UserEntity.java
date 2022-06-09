@@ -1,6 +1,4 @@
-package stefan.anglerparadise.model.entity;
-
-import stefan.anglerparadise.model.entity.BaseEntity;
+package stefan.anglersparadise.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

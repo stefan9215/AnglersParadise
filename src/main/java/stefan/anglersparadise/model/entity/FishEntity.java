@@ -1,4 +1,4 @@
-package stefan.anglerparadise.model.entity;
+package stefan.anglersparadise.model.entity;
 
 import javax.persistence.*;
 import java.util.List;

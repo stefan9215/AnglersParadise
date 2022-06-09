@@ -1,5 +1,5 @@
 body {
-    background-image: url('/img/dam1.jpeg');
+    background-image: url('/img/vacha.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,6 +15,13 @@ body {
 
 img {
     border-radius: 50%;
+}
+
+.btn {
+    font-size: 25px;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    transition: 0.3s;
 }
 
 
