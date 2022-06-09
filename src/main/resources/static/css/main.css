@@ -1,10 +1,14 @@
 body {
-    background-image: url('/img/vacha.jpg');
+    background-image: url('/img/jrebchevo.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-color: #464646;
+}
+
+.card {
+    background-color: #e6d5d9;
 }
 
 .card-img-top {
@@ -13,13 +17,17 @@ body {
     object-fit: cover;
 }
 
+.card-body {
+    background-color: #d3d1de;
+}
+
 img {
     border-radius: 50%;
 }
 
 .btn {
     font-size: 25px;
-    color: white;
+    color: black;
     background: rgba(255, 255, 255, 0.15);
     transition: 0.3s;
 }
