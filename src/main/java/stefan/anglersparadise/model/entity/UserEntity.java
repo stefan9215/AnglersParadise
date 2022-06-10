@@ -1,9 +1,6 @@
 package stefan.anglersparadise.model.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -24,7 +21,7 @@ public class UserEntity extends BaseEntity {
     @Column(name = "last_name")
     private String lastName;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<UserRoleEntity> roles;
 
     public String getUsername() {
