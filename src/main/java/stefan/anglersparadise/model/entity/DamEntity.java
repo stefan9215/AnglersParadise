@@ -13,6 +13,9 @@ public class DamEntity extends BaseEntity{
     @Lob
     private String description;
 
+    @Column(nullable = false)
+    private String imageUrl;
+
     @ManyToOne
     private DamTypeEntity type;
 
@@ -88,6 +91,15 @@ public class DamEntity extends BaseEntity{
 
     public DamEntity setComments(List<CommentEntity> comments) {
         this.comments = comments;
+        return this;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public DamEntity setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
         return this;
     }
 }

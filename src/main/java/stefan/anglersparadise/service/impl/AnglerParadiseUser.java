@@ -1,4 +1,4 @@
-package stefan.anglersparadise.service;
+package stefan.anglersparadise.service.impl;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
