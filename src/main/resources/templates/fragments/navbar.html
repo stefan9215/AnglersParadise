@@ -16,26 +16,24 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark h-50">
         <div class="container-fluid">
             <a class="navbar-brand" th:href="@{/}"><img src="/images/logo.jpg" width="55" height="55"
-                                                  style="border-radius: 50%"></a>
+                                                        style="border-radius: 50%"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav mr-auto  col-12 justify-content-between">
-                    <li class="nav-item" sec:authorize="${isAuthenticated()}">
+                <ul class="navbar-nav mr-auto  col-12 justify-content-between" sec:authorize="${isAuthenticated()}">
+                    <li class="nav-item" >
                         <a class="nav-link" th:href="@{/dams/all}">All Dams</a>
                     </li>
-                    <li class="nav-item" sec:authorize="${isAuthenticated()}">
+                    <li class="nav-item" >
                         <a class="nav-link" th:href="@{/dams/add}">Add Dam</a>
                     </li>
-                    <li class="nav-item" sec:authorize="${isAuthenticated()}">
+                    <li class="nav-item" >
                         <a class="nav-link" th:href="@{/fish/all}">All Fish</a>
                     </li>
-                    <li class="nav-item" sec:authorize="${!isAuthenticated()}">
-                        <a class="nav-link" th:href="@{/about}">About</a>
-                    </li>
-                    <li class="nav-item" sec:authorize="${isAuthenticated()}">
+
+                    <li class="nav-item" >
                         <a class="nav-link" th:href="@{/profile}">Profile</a>
                     </li>
                     <li class="nav-item dropdown" sec:authorize="hasRole('ADMIN')">
@@ -44,22 +42,26 @@
                             Admin
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" th:href="@{/admin}">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item" sec:authorize="${isAuthenticated()}">
+                    <li class="nav-item">
                         <form th:method="post" th:action="@{/users/logout}">
                             <input class="btn" type="submit" value="Logout">
                         </form>
                     </li>
+                </ul>
 
-
-                    <li class="nav-item" sec:authorize="${!isAuthenticated()}">
+                <ul class="navbar-nav mr-auto  col-12 justify-content-end" sec:authorize="${!isAuthenticated()}">
+                    <li class="nav-item" >
+                        <a class="nav-link" th:href="@{/about}">About</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" th:href="@{/users/register}">Register</a>
                     </li>
-                    <li class="nav-item" sec:authorize="${!isAuthenticated()}">
+                    <li class="nav-item">
                         <a class="nav-link" th:href="@{/users/login}">Login</a>
                     </li>
                 </ul>
