@@ -10,8 +10,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import stefan.anglersparadise.repository.UserRepository;
+import stefan.anglersparadise.service.impl.AnglerParadiseUser;
 
 @Configuration
 @EnableWebSecurity
@@ -45,12 +48,18 @@ public class ApplicationSecurityConfiguration {
                 .logoutSuccessUrl("/")
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
-                .and().build();
-//                .antMatcher("/**")
-//                .authorizeRequests(authorize -> authorize
-//                        .anyRequest().authenticated()
-//                )
-//                .build();
+                .and()
+                .build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new Pbkdf2PasswordEncoder();
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService(UserRepository userRepository) {
+        return new AnglerParadiseUser(userRepository);
     }
 
 }
