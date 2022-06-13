@@ -33,23 +33,29 @@ public class UserRegisterController {
     public String confirmRegister(@Valid UserRegisterDTO userRegisterDTO, BindingResult bindingResult,
                                   RedirectAttributes redirectAttributes) {
 
-        if(bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("userRegisterDTO", userRegisterDTO);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterDTO",bindingResult);
+        boolean equalPasswords = userRegisterDTO.getPassword().equals(userRegisterDTO.getConfirmPassword());
+        boolean usernamePresent = userRegisterService.isUsernamePresent(userRegisterDTO.getUsername());
+        boolean emailPresent = userRegisterService.isEmailPresent(userRegisterDTO.getEmail());
 
-            return "redirect:register";
-        }
+        if(bindingResult.hasErrors() || !equalPasswords || usernamePresent || emailPresent) {
 
-        if (!userRegisterDTO.getPassword().equals(userRegisterDTO.getConfirmPassword())) {
-            redirectAttributes.addFlashAttribute("bad_passwords", true);
-            redirectAttributes.addFlashAttribute("userRegisterDTO", userRegisterDTO);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterDTO",bindingResult);
+            addFlashAttributes(userRegisterDTO, bindingResult,
+                    redirectAttributes, equalPasswords, usernamePresent, emailPresent);
+
             return "redirect:register";
         }
 
         userRegisterService.createAccount(userRegisterDTO);
 
         return "redirect:/";
+    }
+
+    private void addFlashAttributes(UserRegisterDTO userRegisterDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes, boolean equalPasswords, boolean usernamePresent, boolean emailPresent) {
+        redirectAttributes.addFlashAttribute("userRegisterDTO", userRegisterDTO);
+        redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterDTO", bindingResult);
+        redirectAttributes.addFlashAttribute("bad_passwords", !equalPasswords);
+        redirectAttributes.addFlashAttribute("usernamePresent", usernamePresent);
+        redirectAttributes.addFlashAttribute("emailPresent", emailPresent);
     }
 
     @ModelAttribute

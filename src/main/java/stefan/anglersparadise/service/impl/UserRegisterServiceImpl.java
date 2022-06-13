@@ -54,4 +54,14 @@ public class UserRegisterServiceImpl implements UserRegisterService {
                 getContext().
                 setAuthentication(authentication);
     }
+
+    @Override
+    public boolean isUsernamePresent(String username) {
+        return userRepository.findByUsername(username).isPresent();
+    }
+
+    @Override
+    public boolean isEmailPresent(String email) {
+        return userRepository.findByEmail(email).isPresent();
+    }
 }
