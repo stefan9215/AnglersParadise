@@ -52,14 +52,14 @@ public class ApplicationSecurityConfiguration {
                 .build();
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new Pbkdf2PasswordEncoder();
-    }
+//    @Bean
+//    public PasswordEncoder passwordEncoder() {
+//        return new Pbkdf2PasswordEncoder();
+//    }
 
-    @Bean
-    public UserDetailsService userDetailsService(UserRepository userRepository) {
-        return new AnglerParadiseUser(userRepository);
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService(UserRepository userRepository) {
+//        return new AnglerParadiseUser(userRepository);
+//    }
 
 }

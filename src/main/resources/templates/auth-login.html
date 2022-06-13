@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anglers Paradise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+</head>
+<body>
+<div th:replace="/fragments/navbar :: nav"></div>
+
+<div class="container col-md-6">
+    <h2 class="text-center text-white mt-3">Have an account?</h2>
+    <form th:method="POST" th:action="@{/users/login}"
+          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center mt-1">
+        <div class="row-2">
+            <div class="form-group col-md-12 mb-3">
+                <label class="text-center text-white fs-5 font-weight-bold" for="username">Username</label>
+                <input th:value="${username}" id="username" name="username" type="text" class="myCustom form-control"
+                       placeholder="Username"/>
+            </div>
+            <div class="form-group col-md-12 mb-3">
+                <label class="text-center text-white fs-5 font-weight-bold" for="password">Password</label>
+                <input id="password" name="password" type="password" class="myCustom form-control"
+                       placeholder="Password"/>
+            </div>
+            <p th:if="${bad_credentials}" class="errors alert alert-danger">
+                Invalid username or password!
+            </p>
+            <div class="form-group">
+                <button type="submit" class="form-control btn btn-outline-dark submit px-3 mt-4">
+                    Login
+                </button>
+            </div>
+            <h3 class="mt-4 text-center">Don't have an account?</h3>
+            <div class="form-group">
+                <a href="/users/register" class="form-control btn btn-outline-dark px-3">Sign up</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+</html>

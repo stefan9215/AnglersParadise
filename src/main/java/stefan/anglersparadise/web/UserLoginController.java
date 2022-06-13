@@ -14,8 +14,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class UserLoginController {
 
     @GetMapping("/users/login")
-    public String login(Model model) {
-        return "login";
+    public String login() {
+        return "auth-login";
     }
 
 

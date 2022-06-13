@@ -1,12 +1,32 @@
 package stefan.anglersparadise.model.dto;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class UserRegisterDTO {
 
+    @NotNull
+    @Size(min = 3, max = 20)
     private String username;
+
+    @Email
+    @NotBlank
     private String email;
+
+    @NotBlank
     private String firstName;
+
+    @NotBlank
     private String lastName;
+
+    @NotBlank
+    @Size(min = 3)
     private String password;
+
+    @NotBlank
+    @Size(min = 3)
     private String confirmPassword;
 
 
