@@ -38,6 +38,7 @@ public class UserRegisterServiceImpl implements UserRegisterService {
     public void createAccount(UserRegisterDTO userRegisterDTO) {
 
         UserEntity userEntity = modelMapper.map(userRegisterDTO, UserEntity.class);
+
         userEntity.setPassword(passwordEncoder.encode(userRegisterDTO.getPassword()))
                 .setRoles(Set.of(userRoleRepository.findByRole(RoleNameEnum.USER)));
 
@@ -55,13 +56,4 @@ public class UserRegisterServiceImpl implements UserRegisterService {
                 setAuthentication(authentication);
     }
 
-    @Override
-    public boolean isUsernamePresent(String username) {
-        return userRepository.findByUsername(username).isPresent();
-    }
-
-    @Override
-    public boolean isEmailPresent(String email) {
-        return userRepository.findByEmail(email).isPresent();
-    }
 }

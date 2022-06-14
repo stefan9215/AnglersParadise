@@ -31,6 +31,9 @@ public class DamEntity extends BaseEntity{
     @OneToMany(mappedBy = "dam")
     private List<CommentEntity> comments;
 
+    @ManyToOne
+    private UserEntity uploader;
+
     public String getName() {
         return name;
     }
@@ -100,6 +103,15 @@ public class DamEntity extends BaseEntity{
 
     public DamEntity setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+        return this;
+    }
+
+    public UserEntity getUploader() {
+        return uploader;
+    }
+
+    public DamEntity setUploader(UserEntity uploader) {
+        this.uploader = uploader;
         return this;
     }
 }
