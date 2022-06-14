@@ -1,7 +1,6 @@
 package stefan.anglersparadise.web;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -33,14 +32,12 @@ public class UserRegisterController {
     public String confirmRegister(@Valid UserRegisterDTO userRegisterDTO, BindingResult bindingResult,
                                   RedirectAttributes redirectAttributes) {
 
-        boolean equalPasswords = userRegisterDTO.getPassword().equals(userRegisterDTO.getConfirmPassword());
-        boolean usernamePresent = userRegisterService.isUsernamePresent(userRegisterDTO.getUsername());
-        boolean emailPresent = userRegisterService.isEmailPresent(userRegisterDTO.getEmail());
+//        boolean equalPasswords = userRegisterDTO.getPassword().equals(userRegisterDTO.getConfirmPassword());
+//        boolean emailPresent = userRegisterService.isEmailPresent(userRegisterDTO.getEmail());
 
-        if(bindingResult.hasErrors() || !equalPasswords || usernamePresent || emailPresent) {
-
-            addFlashAttributes(userRegisterDTO, bindingResult,
-                    redirectAttributes, equalPasswords, usernamePresent, emailPresent);
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("userRegisterDTO", userRegisterDTO);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterDTO", bindingResult);
 
             return "redirect:register";
         }
@@ -50,15 +47,7 @@ public class UserRegisterController {
         return "redirect:/";
     }
 
-    private void addFlashAttributes(UserRegisterDTO userRegisterDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes, boolean equalPasswords, boolean usernamePresent, boolean emailPresent) {
-        redirectAttributes.addFlashAttribute("userRegisterDTO", userRegisterDTO);
-        redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterDTO", bindingResult);
-        redirectAttributes.addFlashAttribute("bad_passwords", !equalPasswords);
-        redirectAttributes.addFlashAttribute("usernamePresent", usernamePresent);
-        redirectAttributes.addFlashAttribute("emailPresent", emailPresent);
-    }
-
-    @ModelAttribute
+    @ModelAttribute("userRegisterDTO")
     public UserRegisterDTO userRegisterDTO() {
         return new UserRegisterDTO();
     }

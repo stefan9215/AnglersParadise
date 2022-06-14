@@ -21,7 +21,7 @@
 <div class="container mt-5">
     <div class="row row-cols-12">
         <div class="col-12 col-lg-4 mb-3"
-            th:each="dam : ${dams}" th:object="${dam}">
+             th:each="dam : ${dams}" th:object="${dam}">
             <div class="card">
                 <img th:src="*{imageUrl}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -31,98 +31,98 @@
                         </p>
                         <p class="fw-bold"> Description:
                             <span class="d-block text-truncate max-width: 250px"
-                                               th:text="*{description}"></span>
+                                  th:text="*{description}"></span>
                         </p>
                     </div>
                     <a th:href="@{/details/{id}(id=*{id})}" class="btn btn-outline-dark">Details</a>
                 </div>
             </div>
         </div>
-<!--        <div class="col-12 col-lg-4 mb-3">-->
-<!--            <div class="card" style="width: 18rem;">-->
-<!--                <img src="/images/fish1.jpg" class="card-img-top" alt="...">-->
-<!--                <div class="card-body">-->
-<!--                    <div class="card-text">-->
-<!--                        <p class="">Name:-->
-<!--                            <span th:text="Vacha"></span>-->
-<!--                        </p>-->
-<!--                        <p> Description:-->
-<!--                            <span class="d-block text-truncate" style="max-width: 120px;"-->
-<!--                                  th:text="sadanjsdajnadsjnadsjnadsjniadjdsdasjaddajdjdsjndjniajniajnias"></span>-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                    <a href="#" class="btn btn-outline-dark">Details</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-12 col-lg-4 mb-3">-->
-<!--            <div class="card" style="width: 18rem;">-->
-<!--                <img src="/images/vacha.jpg" class="card-img-top" alt="...">-->
-<!--                <div class="card-body">-->
-<!--                    <div class="card-text">-->
-<!--                        <p class="">Name:-->
-<!--                            <span th:text="Vacha"></span>-->
-<!--                        </p>-->
-<!--                        <p> Description:-->
-<!--                            <span class="d-block text-truncate" style="max-width: 120px;"-->
-<!--                                  th:text="sadanjsdajnadsjnadsjnadsjniadjdsdasjaddajdjdsjndjniajniajnias"></span>-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                    <a href="#" class="btn btn-outline-dark">Details</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-12 col-lg-4 mb-3">-->
-<!--            <div class="card" style="width: 18rem;">-->
-<!--                <img src="/images/vacha.jpg" class="card-img-top" alt="...">-->
-<!--                <div class="card-body">-->
-<!--                    <div class="card-text">-->
-<!--                        <p class="">Name:-->
-<!--                            <span th:text="Vacha"></span>-->
-<!--                        </p>-->
-<!--                        <p> Description:-->
-<!--                            <span class="d-block text-truncate" style="max-width: 120px;"-->
-<!--                                  th:text="sadanjsdajnadsjnadsjnadsjniadjdsdasjaddajdjdsjndjniajniajnias"></span>-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                    <a href="#" class="btn btn-outline-dark">Details</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-12 col-lg-4 mb-3">-->
-<!--            <div class="card" style="width: 18rem;">-->
-<!--                <img src="/images/vacha.jpg" class="card-img-top" alt="...">-->
-<!--                <div class="card-body">-->
-<!--                    <div class="card-text">-->
-<!--                        <p class="">Name:-->
-<!--                            <span th:text="Vacha"></span>-->
-<!--                        </p>-->
-<!--                        <p> Description:-->
-<!--                            <span class="d-block text-truncate" style="max-width: 120px;"-->
-<!--                                  th:text="sadanjsdajnadsjnadsjnadsjniadjdsdasjaddajdjdsjndjniajniajnias"></span>-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                    <a href="#" class="btn btn-outline-dark">Details</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-12 col-lg-4 mb-3">-->
-<!--            <div class="card" style="width: 18rem;">-->
-<!--                <img src="/images/vacha.jpg" class="card-img-top" alt="...">-->
-<!--                <div class="card-body">-->
-<!--                    <div class="card-text">-->
-<!--                        <p class="">Name:-->
-<!--                            <span th:text="Vacha"></span>-->
-<!--                        </p>-->
-<!--                        <p> Description:-->
-<!--                            <span class="d-block text-truncate" style="max-width: 120px;"-->
-<!--                                  th:text="sadanjsdajnadsjnadsjnadsjniadjdsdasjaddajdjdsjndjniajniajnias"></span>-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                    <a href="#" class="btn btn-outline-dark">Details</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--        <div class="col-12 col-lg-4 mb-3">-->
+        <!--            <div class="card" style="width: 18rem;">-->
+        <!--                <img src="/images/fish1.jpg" class="card-img-top" alt="...">-->
+        <!--                <div class="card-body">-->
+        <!--                    <div class="card-text">-->
+        <!--                        <p class="">Name:-->
+        <!--                            <span th:text="Vacha"></span>-->
+        <!--                        </p>-->
+        <!--                        <p> Description:-->
+        <!--                            <span class="d-block text-truncate" style="max-width: 120px;"-->
+        <!--                                  th:text="sadanjsdajnadsjnadsjnadsjniadjdsdasjaddajdjdsjndjniajniajnias"></span>-->
+        <!--                        </p>-->
+        <!--                    </div>-->
+        <!--                    <a href="#" class="btn btn-outline-dark">Details</a>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div class="col-12 col-lg-4 mb-3">-->
+        <!--            <div class="card" style="width: 18rem;">-->
+        <!--                <img src="/images/vacha.jpg" class="card-img-top" alt="...">-->
+        <!--                <div class="card-body">-->
+        <!--                    <div class="card-text">-->
+        <!--                        <p class="">Name:-->
+        <!--                            <span th:text="Vacha"></span>-->
+        <!--                        </p>-->
+        <!--                        <p> Description:-->
+        <!--                            <span class="d-block text-truncate" style="max-width: 120px;"-->
+        <!--                                  th:text="sadanjsdajnadsjnadsjnadsjniadjdsdasjaddajdjdsjndjniajniajnias"></span>-->
+        <!--                        </p>-->
+        <!--                    </div>-->
+        <!--                    <a href="#" class="btn btn-outline-dark">Details</a>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div class="col-12 col-lg-4 mb-3">-->
+        <!--            <div class="card" style="width: 18rem;">-->
+        <!--                <img src="/images/vacha.jpg" class="card-img-top" alt="...">-->
+        <!--                <div class="card-body">-->
+        <!--                    <div class="card-text">-->
+        <!--                        <p class="">Name:-->
+        <!--                            <span th:text="Vacha"></span>-->
+        <!--                        </p>-->
+        <!--                        <p> Description:-->
+        <!--                            <span class="d-block text-truncate" style="max-width: 120px;"-->
+        <!--                                  th:text="sadanjsdajnadsjnadsjnadsjniadjdsdasjaddajdjdsjndjniajniajnias"></span>-->
+        <!--                        </p>-->
+        <!--                    </div>-->
+        <!--                    <a href="#" class="btn btn-outline-dark">Details</a>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div class="col-12 col-lg-4 mb-3">-->
+        <!--            <div class="card" style="width: 18rem;">-->
+        <!--                <img src="/images/vacha.jpg" class="card-img-top" alt="...">-->
+        <!--                <div class="card-body">-->
+        <!--                    <div class="card-text">-->
+        <!--                        <p class="">Name:-->
+        <!--                            <span th:text="Vacha"></span>-->
+        <!--                        </p>-->
+        <!--                        <p> Description:-->
+        <!--                            <span class="d-block text-truncate" style="max-width: 120px;"-->
+        <!--                                  th:text="sadanjsdajnadsjnadsjnadsjniadjdsdasjaddajdjdsjndjniajniajnias"></span>-->
+        <!--                        </p>-->
+        <!--                    </div>-->
+        <!--                    <a href="#" class="btn btn-outline-dark">Details</a>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div class="col-12 col-lg-4 mb-3">-->
+        <!--            <div class="card" style="width: 18rem;">-->
+        <!--                <img src="/images/vacha.jpg" class="card-img-top" alt="...">-->
+        <!--                <div class="card-body">-->
+        <!--                    <div class="card-text">-->
+        <!--                        <p class="">Name:-->
+        <!--                            <span th:text="Vacha"></span>-->
+        <!--                        </p>-->
+        <!--                        <p> Description:-->
+        <!--                            <span class="d-block text-truncate" style="max-width: 120px;"-->
+        <!--                                  th:text="sadanjsdajnadsjnadsjnadsjniadjdsdasjaddajdjdsjndjniajniajnias"></span>-->
+        <!--                        </p>-->
+        <!--                    </div>-->
+        <!--                    <a href="#" class="btn btn-outline-dark">Details</a>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
 
     </div>
 </div>

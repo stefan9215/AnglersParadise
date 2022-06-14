@@ -1,5 +1,9 @@
 package stefan.anglersparadise.model.dto;
 
+import org.hibernate.validator.constraints.UniqueElements;
+import stefan.anglersparadise.model.validation.UniqueUserEmail;
+import stefan.anglersparadise.model.validation.UniqueUsername;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -7,12 +11,14 @@ import javax.validation.constraints.Size;
 
 public class UserRegisterDTO {
 
-    @NotNull
-    @Size(min = 3, max = 20)
+    @NotNull(message = "Username should be provided!")
+    @Size(min = 3, max = 20, message = "Username should be between 3 and 20 symbols!")
+    @UniqueUsername(message = "Username already taken!")
     private String username;
 
-    @Email
-    @NotBlank
+    @Email(message = "Enter a valid user email!")
+    @NotBlank(message = "User email should be provided!")
+    @UniqueUserEmail(message = "Email already taken!")
     private String email;
 
     @NotBlank
