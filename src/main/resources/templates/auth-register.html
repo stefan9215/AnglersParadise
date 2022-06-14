@@ -49,7 +49,8 @@
                        class="myCustom form-control"
                        placeholder="First Name"/>
                 <p class="invalid-feedback errors alert alert-danger">
-                    First name is required.
+                    <small th:if="${#fields.hasErrors('firstName')}"
+                            th:errors="*{firstName}"></small>
                 </p>
             </div>
 
@@ -59,7 +60,8 @@
                        class="myCustom form-control"
                        placeholder="Last Name"/>
                 <p class="invalid-feedback errors alert alert-danger">
-                    Last name is required.
+                    <small th:if="${#fields.hasErrors('lastName')}"
+                           th:errors="*{lastName}"></small>
                 </p>
             </div>
 
@@ -69,7 +71,8 @@
                        class="myCustom form-control"
                        placeholder="Password"/>
                 <p class="invalid-feedback errors alert alert-danger">
-                    Password is required.
+                    <small th:each="err : ${#fields.errors('password')}"
+                           th:text="${err}"></small>
                 </p>
             </div>
 
@@ -81,7 +84,8 @@
                        class="myCustom form-control"
                        placeholder="Confirm Password"/>
                 <p class="invalid-feedback errors alert alert-danger">
-                    Confirm password is required.
+                    <small th:each="err : ${#fields.errors('confirmPassword')}"
+                           th:text="${err}"></small>
                 </p>
             </div>
 
